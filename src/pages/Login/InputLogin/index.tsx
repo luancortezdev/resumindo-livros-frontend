@@ -5,7 +5,7 @@ import MailIcon from '@mui/icons-material/Mail';
 import LockIcon from '@mui/icons-material/Lock';
 import { Alert, Divider } from '@mui/material';
 import { Button, Input } from '@mui/material';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useForm, SubmitHandler } from "react-hook-form";
 
 type Inputs = {
@@ -15,6 +15,7 @@ type Inputs = {
 
 
 export default function InputLogin() {
+  const navigate = useNavigate()
   const estiloLinkNovaConta = { textDecoration: 'none', color: '#ffffff' }
   const estiloLinkEsqueceuSenha = { textDecoration: 'none', color: '#1565C0' }
 
@@ -65,6 +66,7 @@ export default function InputLogin() {
         </FormControl>
 
         <Button
+          onClick={() => (navigate('/pagina-principal'))}
           type='submit'
           variant='contained'
           sx={{
@@ -79,9 +81,6 @@ export default function InputLogin() {
           LOGIN
         </Button>
         <Box display='flex' alignItems="center" justifyContent="center">
-          {/* <FormGroup>
-            <FormControlLabel control={<Checkbox defaultChecked />} label="Lembrar senha" />
-          </FormGroup> */}
           <Link style={estiloLinkEsqueceuSenha}
             to='https://github.com/luancortezdev'
             target="_blank"
@@ -97,7 +96,7 @@ export default function InputLogin() {
         justifyContent="center"
         mt="30px"
         sx={{
-          backgroundColor: "green",
+          backgroundColor: "#1d7324",
           width: "50%",
           margin: "auto",
           pt: "0.75rem",
