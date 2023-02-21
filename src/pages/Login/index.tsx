@@ -27,7 +27,6 @@ export default function Login() {
         <Box width="100%" height={100} mt={5} mb={5} display="flex" alignItems="center" justifyContent="center">
           <Avatar
             sx={{ height: 140, width: 140 }}
-            // src="https://uploads.jovemnerd.com.br/wp-content/uploads/2022/03/gandalf-colecionavel-05.jpg"
             src="https://www.seekpng.com/png/detail/966-9665493_my-profile-icon-blank-profile-image-circle.png"
           />
         </Box>
