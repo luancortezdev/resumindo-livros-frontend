@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import NavBar from '../components/NavBar'
 import { Livros } from '../pages/Livros'
 import Login from '../pages/Login'
@@ -7,13 +7,15 @@ import { Home } from '../pages/Home'
 
 export default function AppRoutes() {
   return (
-    <Routes>
-      <Route path='/' element={<NavBar />}>
-        <Route path='/' element={<Home />} />
-        <Route path='/formulario' element={<Formulario />} />
-        <Route path='/livros' element={<Livros />} />
-      </Route>
-      <Route path='/login' element={<Login />} />
-    </Routes>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<NavBar />}>
+          <Route path='/' element={<Home />} />
+          <Route path='/livros' element={<Livros />} />
+          <Route path='/livros/novo' element={<Formulario />} />
+        </Route>
+        <Route path='/login' element={<Login />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
