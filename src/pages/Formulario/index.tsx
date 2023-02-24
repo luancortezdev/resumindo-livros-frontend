@@ -1,16 +1,8 @@
 // ** MUI imports
 import { Button, TextField, Typography } from '@mui/material';
 import Box from '@mui/material/Box';
-import axios from 'axios';
-import { useEffect, useState } from 'react';
 
 export default function Formulario() {
-  const [livros, setLivros] = useState([])
-
-  useEffect(() => {
-    axios.get("http://localhost:9000")
-      .then(res => setLivros(res.data))
-  }, [])
 
   return (
     <Box sx={{
@@ -24,7 +16,7 @@ export default function Formulario() {
       <Typography component='h1' variant='h6' marginBottom={2}>Preencha o formulário e faça o resumo do capítulo</Typography>
       <Box
         component='form'
-        sx={{}}>
+      >
         <Box>
           <TextField
             label="Título"
@@ -54,7 +46,7 @@ export default function Formulario() {
           sx={{ mb: 1 }}
           fullWidth
         />
-        <Button variant='contained'>Salvar</Button>
+        <Button variant='contained' color='warning'>Salvar</Button>
       </Box>
     </Box>
   );
