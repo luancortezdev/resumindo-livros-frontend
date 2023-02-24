@@ -16,6 +16,11 @@ export const Livros = () => {
     }
   ]
 
+  const excluirLivros = (id: any) => {
+    const indice = livros.findIndex(livro => livro.id === id)
+    livros.splice(indice, 1)
+  }
+
   return (
     <Container maxWidth="lg" sx={{ mt: 1 }}>
       <TableContainer component={Paper}>
@@ -40,8 +45,8 @@ export const Livros = () => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {livros.map((livro, id) => (
-              <TableRow>
+            {livros.map((livro) => (
+              <TableRow key={livro.id}>
                 <TableCell>
                   {livro.titulo}
                 </TableCell>
@@ -57,7 +62,7 @@ export const Livros = () => {
                 </TableCell>
                 <TableCell>
                   {/* color="error" onClick={() => excluir(livro)} */}
-                  <Button sx={{ paddingLeft: '0px' }} color="error">excluir</Button>
+                  <Button sx={{ paddingLeft: '0px' }} color="error" onClick={excluirLivros}>excluir</Button>
                 </TableCell>
               </TableRow>
             ))}
